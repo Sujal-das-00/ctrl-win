@@ -10,14 +10,14 @@
 
     <style>
         body {
-            background-color: #121212; /* Blackish-Blue */
+            background-color: #121212;
             color: white;
         }
         .host-container {
-            width: 400px;
+            width: 800px;
             margin: 50px auto;
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             color: black;
@@ -26,10 +26,9 @@
             background: #FFA500;
             color: white;
             text-align: center;
-            padding: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            font-size: 20px;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 22px;
             font-weight: bold;
         }
         .submit-btn {
@@ -47,31 +46,85 @@
     <div class="host-container">
         <div class="host-header">Host A Ride</div>
         <form action="/submit_ride" method="POST">
-            <div class="mb-3">
-                <label class="form-label">From Destination</label>
-                <input type="text" class="form-control" name="from_destination" required>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Age</label>
+                    <input type="number" class="form-control" name="age" required>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">To Destination</label>
-                <input type="text" class="form-control" name="to_destination" required>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Gender</label>
+                    <select class="form-select" name="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Passenger Preference</label>
+                    <select class="form-select" name="passenger_preference" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Total Cost</label>
-                <input type="number" class="form-control" name="cost" required>
+
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-control" name="date" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label class="form-label">Time</label>
+                    <input type="time" class="form-control" name="time" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="tel" class="form-control" name="mobile" required>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Preference</label>
-                <select class="form-select" name="preference" required>
-                    <option value="1 person">1 Person</option>
-                    <option value="2 persons">2 Persons</option>
-                    <option value="3 persons">3 Persons</option>
-                    <option value="4 persons">4 Persons</option>
-                </select>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">From Destination</label>
+                    <input type="text" class="form-control" name="from_destination" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">To Destination</label>
+                    <input type="text" class="form-control" name="to_destination" required>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Approximate Luggage (kg)</label>
-                <input type="number" class="form-control" name="luggage" required>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Total Cost</label>
+                    <input type="number" class="form-control" name="cost" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Preference</label>
+                    <select class="form-select" name="preference" required>
+                        <option value="1 person">1 Person</option>
+                        <option value="2 persons">2 Persons</option>
+                        <option value="3 persons">3 Persons</option>
+                        <option value="4 persons">4 Persons</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label">Approximate Luggage (kg)</label>
+                    <input type="number" class="form-control" name="luggage" required>
+                </div>
             </div>
+
+            <div class="mb-3">
+                <label class="form-label">Additional Notes (Optional)</label>
+                <textarea class="form-control" name="notes" rows="3" placeholder="E.g., Motion sickness, Window seat preference, etc."></textarea>
+            </div>
+
             <button type="submit" class="btn submit-btn">Submit Ride</button>
         </form>
     </div>
